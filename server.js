@@ -16,27 +16,6 @@ app.post("/scrape", async (req, res) => {
         waitUntil: "networkidle2",
       }
     );
-
-    // const data = await page.evaluate(() => {
-    //   const books = Array.from(
-    //     document.querySelectorAll("article.product_pod")
-    //   );
-    //   const headerEl = document.querySelector(".page-header h1");
-    //   const book_name=  headerEl ? headerEl.textContent.trim() : null;
-
-    //   console.log(book_name, "hello"); // This will not log in your Node.js console — see notes below
-
-    //   return books.map((book) => {
-    //     const title = book.querySelector("h3 a").getAttribute("title");
-    //     const price = book.querySelector(".price_color").textContent.trim();
-    //     const stock = book
-    //       .querySelector(".instock.availability")
-    //       .textContent.trim();
-    //     const rating = book.querySelector(".star-rating").classList[1]; // e.g., 'One', 'Two', etc.
-    //     return { title, price, stock, rating };
-    //   });
-    // });
-
     const data = await page.evaluate(() => {
       const books = Array.from(
         document.querySelectorAll("article.product_pod")
