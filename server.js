@@ -64,4 +64,5 @@ app.post("/scrape", async (req, res) => {
   }
 });
 
-app.listen(2000, () => console.log("Server running on port 2000"));
+const port = process.env.PORT || 2000;
+app.listen(port, () => console.log(`Server running on port ${port}`));
